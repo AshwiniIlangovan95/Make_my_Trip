@@ -1,1 +1,19 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+    /* --font-clr-light:; */
+    --font-clr:#4a4a4a;
+
+  }
+
+
+html, body{
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    display: block;
+    overflow: hidden;
+    /* background: rgb(237, 235, 235);
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, #051322,#15457c); */
+    font-family: Lato, sans-serif
+}

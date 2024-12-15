@@ -1,0 +1,157 @@
+.container{
+    background-repeat: no-repeat;
+    background-image: linear-gradient(to bottom, #051322,#15457c) !important;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}    
+.booking-card{
+    background-color: white;
+    width: 1200px;
+    z-index: 1;
+    border-radius: 10px;
+}
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.booking-types {
+    position: absolute;
+    display: flex;
+    background-color: white;
+    align-items: center;
+    box-shadow: 0 2px 20px 0 rgb(0 0 0 / 10%);
+    border-radius: 8px;
+    width: 1000px;
+}
+
+.catagories{
+    background-color: white;
+    width: 950px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: rgb(86, 86, 86);
+    z-index: 2;
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.1);
+}
+
+.cat-style{
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 1;
+}
+
+.cat-style:hover, .selected {
+    color: #008cff;
+    cursor: pointer;
+    border-bottom: 2px solid #008cff;
+}
+.cat-font-style{
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 17px;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.cat-icon-style{
+    font-size: 32px;
+    display: flex;
+    justify-content: center;
+}
+
+
+.ticket-type{
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 72px;
+    /* margin: 80px 10px 0 10px; */
+}
+
+.radio-spacing{
+    padding: 0 10px;
+    display: flex;
+    align-items: start;
+}
+
+.fnt-w-400{
+    font-weight: 400;
+}
+
+.fnt-s-14{
+    font-size: 14px;
+}
+
+.search-container {
+    padding: 20px;
+    border-radius: 8px;
+}
+.search-form {
+    width: 100%;
+    margin-top: 16px;
+    border: 1px solid rgb(192, 191, 191);
+    display: flex;
+  }
+  
+.search-form-field {
+    width: 100%;
+    border-right: 1px solid rgb(192, 191, 191);
+}
+
+.search-form-field input{
+    font-size: 32px;
+    font-weight: bolder;
+    color: black;
+}
+
+
+:host ::ng-deep .no-underline .mat-form-field-underline {
+    display: none !important;
+}
+
+:host ::ng-deep .mdc-line-ripple::before, .mdc-line-ripple::after{
+    border: none !important;
+}
+  
+:host ::ng-deep .mdc-line-ripple::before:focus, .mdc-line-ripple::after:focus{
+    border: none !important;
+}
+
+:host ::ng-deep .mat-mdc-text-field-wrapper {
+    padding-left: 0;
+}
+:host ::ng-deep .mat-mdc-form-field-infix{
+    padding: 10px 20px !important;
+}
+
+.inp-fnt-32{
+    font-size: 32px;
+}
+
+.search-button {
+    background: linear-gradient(93deg, #53b2fe, #065af3);
+    color: white;
+    width: 216px;
+    padding: 10px;
+    margin-bottom: -24px;
+    border-radius: 34px;
+    font-size: 24px;
+    font-weight: 700;
+    text-align: center;
+    border: none;
+}
+
+.input-label {
+    font-size: 14px;
+    font-weight: 400;
+    color: #4a4a4a;
+}

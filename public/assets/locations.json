@@ -1,0 +1,14 @@
+{
+    "locations": [
+        { "id": 1, "name": "New Delhi", "code": "NDLS", "state": "Delhi" },
+        { "id": 2, "name": "Mumbai", "code": "BCT", "state": "Maharashtra" },
+        { "id": 3, "name": "Bangalore", "code": "SBC", "state": "Karnataka" },
+        { "id": 4, "name": "Kanpur", "code": "CNB", "state": "Uttar Pradesh" },
+        { "id": 5, "name": "Chennai", "code": "MAS", "state": "Tamil Nadu" },
+        { "id": 6, "name": "Kolkata", "code": "HWH", "state": "West Bengal" },
+        { "id": 7, "name": "Pune", "code": "PUNE", "state": "Maharashtra" },
+        { "id": 8, "name": "Hyderabad", "code": "HYB", "state": "Telangana" },
+        { "id": 9, "name": "Jaipur", "code": "JP", "state": "Rajasthan" },
+        { "id": 10, "name": "Ahmedabad", "code": "ADI", "state": "Gujarat" }
+      ]
+}

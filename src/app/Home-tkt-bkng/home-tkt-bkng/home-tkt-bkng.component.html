@@ -1,0 +1,251 @@
+<!-- <div class="bg-clr">    
+    <div class="container" style="color: var(--font-clr)">
+        <div class="catagories" style="color: var(--font-clr)">
+            <!-- <div class="cat-style" *ngFor="let cat of catagories">
+                <i  class="fas fa-plane-departure cat-icon-style"></i>
+                <span class="cat-font-style">{{cat.name}}</span>
+            </div> -->
+            <!-- <div class="nav-item" *ngFor="let item of catagories">
+                <img [src]="item.icon" alt="icon" />
+                <span>{{ item.name}} </span>
+            </div> 
+            <div class="cat-style"> 
+                <i  class="fa-solid fa-plane-departure cat-icon-style"></i>
+                <span class="cat-font-style">Flights</span>
+            </div>
+            <div class="cat-style"> 
+                <i  class="fa-solid fa-hotel cat-icon-style"></i>
+                <span class="cat-font-style">Hotels</span>
+            </div>
+            <div class="cat-style">
+                <i  class="fa-solid fa-house cat-icon-style"></i>
+                <span class="cat-font-style">Homestays & Villas</span>
+            </div>
+            <div class="cat-style">
+                <i  class="fa-solid fa-umbrella-beach cat-icon-style"></i>
+                <span class="cat-font-style">Holiday Packages</span>
+            </div>
+            <div class="cat-style">
+                <i  class="fa-solid fa-train-subway cat-icon-style"></i>
+                <span class="cat-font-style">Trains</span>
+            </div>
+            <div class="cat-style">
+                <i  class="fa-solid fa-bus cat-icon-style"></i>
+                <span class="cat-font-style">Buses</span>
+            </div>
+            <div class="cat-style">
+                <i  class="fa-solid fa-taxi cat-icon-style"></i>
+                <span class="cat-font-style">Cabs</span>
+            </div>
+            <div class="cat-style">
+                <i  class="fa-solid fa-credit-card cat-icon-style"></i>
+                <span class="cat-font-style">Forex Card & Currency</span>
+            </div>
+            <div class="cat-style">
+                <i  class="fa-solid fa-shield-heart cat-icon-style"></i>
+                <span class="cat-font-style">Travel Insurance</span>
+            </div> 
+        </div>
+        <div class="tickets">
+            <div class="ticket-type ">
+                <form style="display: flex; align-items: center;" >
+                    <div class="radio-spacing">
+                        <input type="radio" value="Book Train Tickets">
+                        <label class="fnt-w-400 fnt-s-14">Book Train Tickets</label>
+                    </div>
+                    <div class="radio-spacing">
+                        <input type="radio" value="Book Train Tickets">
+                        <label class="fnt-w-400 fnt-s-14">Check PNR Status</label>
+                    </div>
+                    <div class="radio-spacing">
+                        <input type="radio" value="Book Train Tickets">
+                        <label class="fnt-w-400 fnt-s-14">Live Train Status</label>
+                    </div>               
+                </form>
+                <div style="display: block;">
+                    <h5 style="margin: 0; color: var(--font-clr);display: flex; justify-content: center;">Train Ticket Booking</h5>
+                    <p style="margin: 0; font-size: 12px; color: var(--font-clr); display: flex; justify-content: center;">IRCTC Authorized e-ticketing</p>
+                </div>
+            </div>
+
+            <div class="search-Container">
+                <form class="search-form">
+                    <mat-form-field class="no-underline search-form-field">
+                        <label>From</label>
+                        <input matInput #input type="text"
+                            placeholder="Pick one"
+                            aria-expanded="false"
+                            [formControl]="myControl"
+                            [matAutocomplete]="auto"
+                            (input)="filter()"
+                            (focus)="filter()">
+                        <mat-autocomplete requireSelection #auto="matAutocomplete">
+                        @for (option of filteredOptions; track option) {
+                            <mat-option [value]="option">{{option}}</mat-option>
+                        }
+                        </mat-autocomplete>
+                    </mat-form-field>
+
+                    <mat-form-field class="no-underline search-form-field">
+                        <label>To</label>
+                        <input matInput #input type="text"
+                            placeholder=""
+                            [formControl]="myControl"
+                            [matAutocomplete]="auto"
+                            (input)="filter()"
+                            (focus)="filter()">
+                        <mat-autocomplete requireSelection #auto="matAutocomplete">
+                        @for (option of filteredOptions; track option) {
+                            <mat-option [value]="option">{{option}}</mat-option>
+                        }
+                        </mat-autocomplete>
+                    </mat-form-field>
+
+                     <mat-form-field>
+                        <mat-label>Angular forms</mat-label>
+                        <input matInput [matDatepicker]="picker1" [formControl]="date">
+                        <mat-hint>MM/DD/YYYY</mat-hint> 
+                        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1></mat-datepicker>
+                    </mat-form-field> 
+                </form>
+            </div>
+        </div>
+    </div>
+</div> -->
+
+
+
+<div class="container">
+    <div class="booking-card">
+        <div class="flex-container">
+            <div class="booking-types flex-container">
+                <div class="cat-style"> 
+                    <i  class="fa-solid fa-plane-departure cat-icon-style"></i>
+                    <span class="cat-font-style">Flights</span>
+                </div>
+                <div class="cat-style"> 
+                    <i  class="fa-solid fa-hotel cat-icon-style"></i>
+                    <span class="cat-font-style">Hotels</span>
+                </div>
+                <div class="cat-style">
+                    <i  class="fa-solid fa-house cat-icon-style"></i>
+                    <span class="cat-font-style">Homestays & Villas</span>
+                </div>
+                <div class="cat-style">
+                    <i  class="fa-solid fa-umbrella-beach cat-icon-style"></i>
+                    <span class="cat-font-style">Holiday Packages</span>
+                </div>
+                <div class="cat-style selected">
+                    <i  class="fa-solid fa-train-subway cat-icon-style"></i>
+                    <span class="cat-font-style">Trains</span>
+                </div>
+                <div class="cat-style">
+                    <i  class="fa-solid fa-bus cat-icon-style"></i>
+                    <span class="cat-font-style">Buses</span>
+                </div>
+                <div class="cat-style">
+                    <i  class="fa-solid fa-taxi cat-icon-style"></i>
+                    <span class="cat-font-style">Cabs</span>
+                </div>
+                <div class="cat-style">
+                    <i  class="fa-solid fa-credit-card cat-icon-style"></i>
+                    <span class="cat-font-style">Forex Card & Currency</span>
+                </div>
+                <div class="cat-style">
+                    <i  class="fa-solid fa-shield-heart cat-icon-style"></i>
+                    <span class="cat-font-style">Travel Insurance</span>
+                </div> 
+            </div>                
+        </div>
+        <div class="ticket-type ">
+            <form style="display: flex; align-items: center;" >
+                <div class="radio-spacing">
+                    <input type="radio" value="Book Train Tickets" checked name="selectedType">
+                    <label class="fnt-w-400 fnt-s-14">Book Train Tickets</label>
+                </div>
+                <div class="radio-spacing">
+                    <input type="radio" value="Check PNR Status" name="selectedType">
+                    <label class="fnt-w-400 fnt-s-14">Check PNR Status</label>
+                </div>
+                <div class="radio-spacing">
+                    <input type="radio" value="Live Train Status" name="selectedType">
+                    <label class="fnt-w-400 fnt-s-14">Live Train Status</label>
+                </div>               
+            </form>
+            <div style="display: block; margin-right: 16px;">
+                <h5 style="margin: 0; color: var(--font-clr);display: flex; justify-content: center;">Train Ticket Booking</h5>
+                <p style="margin: 0; font-size: 12px; color: var(--font-clr); display: flex; justify-content: center;">IRCTC Authorized e-ticketing</p>
+            </div>
+        </div>
+
+        <div class="search-container">
+            <form class="search-form">
+                <mat-form-field class="no-underline search-form-field">
+                    <mat-label class="input-label">From</mat-label>
+                    <input
+                        matInput
+                        placeholder="Select city"
+                        [formControl]="fromControl"
+                        [matAutocomplete]="fromAuto"
+                    >
+                    <mat-autocomplete #fromAuto="matAutocomplete" (optionSelected)="onCitySelected($event.option.value)">
+                        <mat-option *ngFor="let city of filteredFromCities" [value]="city.id">
+                            {{ city.name }}
+                          </mat-option>
+                    </mat-autocomplete>
+                </mat-form-field>
+                <mat-form-field appearance="outline" class="no-underline search-form-field">
+                    <label class="input-label">To</label>
+                    <input type="text" matInput 
+                    [formControl]="fromControl"
+                    [matAutocomplete]="autoFrom" />
+                    <mat-autocomplete #autoFrom="matAutocomplete">
+                      <mat-option *ngFor="let city of filteredFromCities | async" [value]="city.name">
+                        {{ city.name }}
+                      </mat-option>
+                    </mat-autocomplete>
+                  </mat-form-field>
+                <mat-form-field class="no-underline search-form-field">
+                    <label class="input-label">To</label>
+                    <input matInput #input type="text"
+                        placeholder="Select city"
+                        [matAutocomplete]="auto"
+                        >
+                    <mat-autocomplete requireSelection #auto="matAutocomplete">
+                    @for (option of locations; track option) {
+                        <mat-option [value]="option">{{option}}</mat-option>
+                    }
+                    </mat-autocomplete>
+                </mat-form-field>
+                <mat-form-field class="no-underline search-form-field">
+                    <label class="input-label">Travel Date</label>
+                    <input matInput #input type="text"
+                        placeholder="Select Date"
+                        aria-expanded="false"
+                        [matAutocomplete]="auto"
+                        >
+                
+                </mat-form-field>
+                <mat-form-field class="no-underline search-form-field">
+                    <label class="input-label">Class</label>
+                    <input 
+                        matInput
+                        type="text"
+                        placeholder="Select class"
+                        [matAutocomplete]="auto"
+                        
+                    >
+                    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                    @for (option of classes; track option) {
+                        <mat-option [value]="option">{{option}}</mat-option>
+                    }
+                    </mat-autocomplete>
+                </mat-form-field>
+            </form>
+        </div>
+        <div class="flex-container">
+            <button class="search-button">SEARCH</button>
+        </div>
+    </div>  
+</div>

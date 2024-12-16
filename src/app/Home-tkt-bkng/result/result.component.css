@@ -13,42 +13,7 @@ body {
     background-color: #e1dede;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 20%;
-    background-color: #fff;
-    padding: 15px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
 
-.sidebar h3 {
-    margin-bottom: 10px;
-    font-size: 1.2em;
-}
-
-.filter-list {
-    list-style: none;
-    padding: 0;
-}
-
-.filter-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    font-size: 0.9em;
-}
-
-.time-filters button {
-    display: block;
-    width: 100%;
-    padding: 5px;
-    margin: 5px 0;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
-    cursor: pointer;
-}
 
 /* Main Content */
 .main-content {
@@ -112,3 +77,33 @@ body {
     border: 1px solid var(--font-clr);
     border-radius: 3px;
 }
+
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    column-gap: 5px;
+    row-gap: 5px;
+}
+.grid-item {
+    padding: 8px;
+    font-size: 14px;
+    text-align: center;
+}
+.check-form{
+    display: flex; 
+    justify-content: space-between; 
+    font-size: 14px;
+    padding: 10px;
+}
+:host ::ng-deep .p-card{
+    margin-bottom: 20px;
+}
+.card-header{
+    font-size: 16px;
+    color: #000;
+    font-weight: 900;
+}
+input[type="checkbox"]{
+    width: 17px; /*Desired width*/
+    height: 17px; /*Desired height*/
+  }

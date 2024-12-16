@@ -1,55 +1,37 @@
 <div class="container">
     <!-- Left Sidebar: Journey Class Filters -->
-     <div>
-        <p-card header="Journey Class Filters">
+    <div style="width: 300px;">
+        <p-card class="custom-card">
+            <span class="card-header">Journey Class Filters</span>
             <form>
                 @for (list of journeyClassFilters; track list.id) {
-                    <div>
+                    <div class="check-form">
                         <label>
-                          <input 
+                            <input 
                             type="checkbox" 
                             [value]="list.id" 
                             name="user-{{ list.id }}"
-                          />
-                          {{ list.name }} 
+                            />
+                            <span>{{ list.name }}</span> 
                         </label>
-                      </div>
+                        {{list.seats}}
+                    </div>   
                 }
             </form>
             
         </p-card>
-        <p-card header="Arrival in Kanpur">
-            <div class="row">
+        <p-card header="Arrival in Kanpur" ngstyle="margin-bottom: 15px;">
+            <div class="grid-container">
                 @for(time of arrivalToK; track time.id){
-                    <div class="col-6 time-style">
+                    <div class="grid-item time-style">
                         <i class="fa-regular fa-sun"></i>
                         {{time}}
                     </div>
                 }
             </div>
         </p-card>
-     </div>
-    <aside class="sidebar">
-        <h3>Journey Class Filters</h3>
-        <ul class="filter-list">
-            <li><input type="checkbox"> 1st Class AC - 1A <span>39</span></li>
-            <li><input type="checkbox"> 2nd Class AC - 2A <span>47</span></li>
-            <li><input type="checkbox"> 3rd Class AC - 3A <span>50</span></li>
-            <li><input type="checkbox"> Sleeper - SL <span>42</span></li>
-            <li><input type="checkbox"> Second Sitting - 2S <span>1</span></li>
-            <li><input type="checkbox"> AC Chair Car - CC <span>6</span></li>
-            <li><input type="checkbox"> Executive Anubhuti - EA <span>1</span></li>
-            <li><input type="checkbox"> AC three tier (economy) - 3E <span>29</span></li>
-            <li><input type="checkbox"> Executive Chair Car - EC <span>5</span></li>
-        </ul>
-        <h3>Arrival in Kanpur</h3>
-        <div class="time-filters">
-            <button>12am - 6am</button>
-            <button>6am - 12pm</button>
-            <button>12pm - 6pm</button>
-            <button>6pm - 12am</button>
-        </div>
-    </aside>
+    </div>
+
 
     <!-- Right Main Content: Train List -->
     <main class="main-content">

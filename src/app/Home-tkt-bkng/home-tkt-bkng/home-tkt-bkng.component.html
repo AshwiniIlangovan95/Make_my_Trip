@@ -201,7 +201,7 @@
                 </div>
             </form>
             
-            <!-- <form class="search-form">
+            <form class="search-form">
                 <mat-form-field class="no-underline search-form-field">
                     <mat-label class="input-label">From</mat-label>
                     <input
@@ -211,9 +211,11 @@
                         [matAutocomplete]="fromAuto"
                     >
                     <mat-autocomplete #fromAuto="matAutocomplete" (optionSelected)="onCitySelected($event.option.value)">
-                        <mat-option *ngFor="let city of filteredFromCities" [value]="city.id">
-                            {{ city.name }}
-                          </mat-option>
+                        <mat-option>
+                            @for(city of filteredFromCities; track city.id){
+                                {{ city.name }}
+                            }    
+                        </mat-option>
                     </mat-autocomplete>
                 </mat-form-field>
                 <mat-form-field appearance="outline" class="no-underline search-form-field">
@@ -263,7 +265,7 @@
                     }
                     </mat-autocomplete>
                 </mat-form-field>
-            </form> -->
+            </form>
         </div>
         <div class="flex-container">
             <button class="search-button">SEARCH</button>

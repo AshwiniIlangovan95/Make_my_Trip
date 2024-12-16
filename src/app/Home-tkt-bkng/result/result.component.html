@@ -1,5 +1,34 @@
 <div class="container">
     <!-- Left Sidebar: Journey Class Filters -->
+     <div>
+        <p-card header="Journey Class Filters">
+            <form>
+                @for (list of journeyClassFilters; track list.id) {
+                    <div>
+                        <label>
+                          <input 
+                            type="checkbox" 
+                            [value]="list.id" 
+                            name="user-{{ list.id }}"
+                          />
+                          {{ list.name }} 
+                        </label>
+                      </div>
+                }
+            </form>
+            
+        </p-card>
+        <p-card header="Arrival in Kanpur">
+            <div class="row">
+                @for(time of arrivalToK; track time.id){
+                    <div class="col-6 time-style">
+                        <i class="fa-regular fa-sun"></i>
+                        {{time}}
+                    </div>
+                }
+            </div>
+        </p-card>
+     </div>
     <aside class="sidebar">
         <h3>Journey Class Filters</h3>
         <ul class="filter-list">

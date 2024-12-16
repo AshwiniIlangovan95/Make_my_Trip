@@ -1,0 +1,20 @@
+{
+    "journeyClassFilters" : [
+        {"name" : "1st Class AC - 1A", "seats" : 38},
+        {"name" : "2nd Class AC - 2A", "seats" : 43},
+        {"name" : "3rd Class AC - 3A", "seats" : 48},
+        {"name" : "Sleeper - SL", "seats" : 31},
+        {"name" : "Second Seating - 2S", "seats" : 2},
+        {"name" : "Ac Chair Car - CC", "seats" : 6},
+        {"name" : "Executive Anubhuti - EA", "seats" : 1},
+        {"name" : "AC three tier(economy) - 3E", "seats" : 28},
+        {"name" : "Executive Chair Car - EC", "seats" : 5}
+    ],
+
+    "arrivalToKanpur" : [
+        "12am - 6am",
+        "6am - 12pm",
+        "12pm - 6pm",
+        "6pm - 12am"
+    ]
+}

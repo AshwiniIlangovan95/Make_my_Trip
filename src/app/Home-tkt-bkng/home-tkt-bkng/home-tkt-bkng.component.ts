@@ -9,6 +9,9 @@ import { LocationService } from '../../../services/location.service';
 import { CommonModule } from '@angular/common';
 import { map, Observable, startWith } from 'rxjs';
 import { AutoComplete } from 'primeng/autocomplete';
+import { IftaLabelModule } from 'primeng/iftalabel';
+import { DatePicker } from 'primeng/datepicker';
+import { Select, SelectItem } from 'primeng/select';
 
 interface AutoCompleteCompleteEvent {
   originalEvent: Event;
@@ -27,7 +30,10 @@ interface AutoCompleteCompleteEvent {
             ReactiveFormsModule,
             HttpClientModule,
             CommonModule,
-            AutoComplete
+            AutoComplete,
+            IftaLabelModule,
+            DatePicker,
+            Select
           ],
   templateUrl: './home-tkt-bkng.component.html',
   styleUrl: './home-tkt-bkng.component.css'
@@ -55,8 +61,12 @@ export class HomeTktBkngComponent implements OnInit {
   countries:any;
   selectedCountry: any;
   filteredCountries: any;
+  date:Date[] | undefined;
+  trainClasses: SelectItem[] = [];
+  selectedItem: string | undefined
 
   constructor(private locationService: LocationService,  private fb: FormBuilder) {
+    
     this.travelForm = this.fb.group({
       fromCity: [''],
       toCity: [''],
@@ -67,6 +77,7 @@ export class HomeTktBkngComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCountries();
+    this.getClasses();
     this.locationService.getLocation().subscribe((data)=> {
       this.locations = data.locations;
       console.log("OnInit", this.locations)
@@ -96,6 +107,12 @@ export class HomeTktBkngComponent implements OnInit {
     this.locationService.getLocation().subscribe((data)=>{
       this.countries = data.locations
       console.log("getCountries", this.countries)
+    })
+  }
+  getClasses(){
+    this.locationService.getClasses().subscribe((data)=>{
+      this.trainClasses = data.classes;
+      console.log("getClasses", this.trainClasses)
     })
   }
 

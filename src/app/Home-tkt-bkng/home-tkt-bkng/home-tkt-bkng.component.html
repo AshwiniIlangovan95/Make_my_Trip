@@ -181,6 +181,27 @@
 
         <div class="search-container">
             <form class="search-form">
+                <div class="card flex justify-center search-form-field" style="height: 50px;">
+                    <p-iftalabel>
+                        <p-autocomplete [(ngModel)]="selectedCountry" [forceSelection]="true" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" optionLabel="name" />
+                        <label style="font-size:14px;" for="ac">From</label>
+                    </p-iftalabel>   
+                </div>
+                <div class="card flex justify-center search-form-field">
+                    <p-iftalabel>
+                        <p-autocomplete [(ngModel)]="selectedCountry" [forceSelection]="true" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" optionLabel="name" />
+                        <label style="font-size:14px;" for="ac">To</label>
+                    </p-iftalabel>   
+                </div>
+                <div class="card flex justify-center search-form-field">
+                    <p-datepicker [(ngModel)]="date" [numberOfMonths]="2" />
+                </div>
+                <div class="card flex justify-center search-form-field">
+                    <p-select [options]="trainClasses" [(ngModel)]="selectedItem" placeholder="Select Item" [virtualScroll]="true" [virtualScrollItemSize]="38" class="w-full md:w-56" />
+                </div>
+            </form>
+            
+            <!-- <form class="search-form">
                 <mat-form-field class="no-underline search-form-field">
                     <mat-label class="input-label">From</mat-label>
                     <input
@@ -242,14 +263,12 @@
                     }
                     </mat-autocomplete>
                 </mat-form-field>
-            </form>
+            </form> -->
         </div>
         <div class="flex-container">
             <button class="search-button">SEARCH</button>
         </div>
 
-        <div class="card flex justify-center">
-            <p-autocomplete [(ngModel)]="selectedCountry" [forceSelection]="true" [suggestions]="filteredCountries" (completeMethod)="filterCountry($event)" optionLabel="name" />
-        </div>
+       
     </div>  
 </div>

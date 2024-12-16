@@ -10,6 +10,7 @@ body {
     display: flex;
     gap: 20px;
     padding: 20px;
+    background-color: #e1dede;
 }
 
 /* Sidebar */
@@ -104,4 +105,10 @@ body {
     padding: 2px 5px;
     border-radius: 3px;
     font-size: 0.8em;
+}
+
+
+.time-style{
+    border: 1px solid var(--font-clr);
+    border-radius: 3px;
 }

@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { CardModule } from 'primeng/card';
 import { LocationService } from '../../../services/location.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { StoreService } from '../../../services/store.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-result',
   standalone: true,
-  imports: [CardModule,
+  imports: [
               HttpClientModule],
   templateUrl: './result.component.html',
   styleUrl: './result.component.css'
@@ -15,25 +16,35 @@ export class ResultComponent implements OnInit{
 
   public journeyClassFilters:any;
   public arrivalToK:any;
-
+  public trainSchedules: any;
+  public travelDetails: any;
 
   constructor(
-          private http:HttpClient,
-          private resultService:LocationService,
+          private router:Router,
+          private locationService:LocationService,
+          private storeService: StoreService
           ){
-
   }
 
   ngOnInit(){
+    this.travelDetails = this.storeService.getTravelDetails();
     this.getResultData();
+    this.getTrainScheduleData();
+    if(!this.travelDetails?.toStation) {
+      this.router.navigate(['']);
+    }
   }
 
-
   getResultData(){
-    this.resultService.getResults().subscribe((data)=>{
+    this.locationService.getResults().subscribe((data)=>{
       this.journeyClassFilters = data.journeyClassFilters;
       this.arrivalToK = data.arrivalToKanpur;
-      console.log("getResultData - ", this.journeyClassFilters,this.arrivalToK)
+    })
+  }
+
+  getTrainScheduleData() {
+    this.locationService.getTrainSchedules().subscribe((data) => {
+      this.trainSchedules = data;
     })
   }
 

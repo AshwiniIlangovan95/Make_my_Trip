@@ -1,8 +1,8 @@
 <div class="container">
     <!-- Left Sidebar: Journey Class Filters -->
     <div style="width: 300px;">
-        <p-card class="custom-card">
-            <span class="card-header">Journey Class Filters</span>
+        <div class="train-card main-content">
+            <div class="card-header">Journey Class Filters</div>
             <form>
                 @for (list of journeyClassFilters; track list.id) {
                     <div class="check-form">
@@ -11,6 +11,7 @@
                             type="checkbox" 
                             [value]="list.id" 
                             name="user-{{ list.id }}"
+                            style="margin-right: 8px;"
                             />
                             <span>{{ list.name }}</span> 
                         </label>
@@ -19,8 +20,10 @@
                 }
             </form>
             
-        </p-card>
-        <p-card header="Arrival in Kanpur" ngstyle="margin-bottom: 15px;">
+        </div>
+        <div class="train-card main-content">
+            <div class="card-header">Arrival in {{travelDetails?.toStation}}</div>
+
             <div class="grid-container">
                 @for(time of arrivalToK; track time.id){
                     <div class="grid-item time-style">
@@ -29,91 +32,45 @@
                     </div>
                 }
             </div>
-        </p-card>
+        </div>
     </div>
 
-
-    <!-- Right Main Content: Train List -->
     <main class="main-content">
-        <!-- Refund Banner -->
         <div class="refund-banner">
             <strong>Get Full Refund if you cancel your train ticket</strong> Assured refund. Trusted by 1 lakh+ users
         </div>
-
-        <!-- Train Card 1 -->
-        <div class="train-card">
-            <div class="train-header">
-                <h2>Ndls Cnb Sht</h2>
-                <span>#12034 | Depart on: <strong>SMTWTFS</strong></span>
-            </div>
-            <div class="train-details">
-                <div class="time">
-                    <p>3:50 PM, 11 DEC</p>
-                    <small>New Delhi</small>
-                </div>
-                <div class="duration">5h 0m</div>
-                <div class="time">
-                    <p>8:50 PM, 11 DEC</p>
-                    <small>Kanpur Central</small>
-                </div>
-            </div>
-            <div class="classes">
-                <div class="class-card">
-                    <span>CC</span> <span class="tatkal">TATKAL</span>
-                    <p>₹ 1115</p>
-                    <small>Available 58</small>
-                </div>
-                <div class="class-card">
-                    <span>CC</span>
-                    <p>₹ 1055</p>
-                    <small>Available 459</small>
-                </div>
-                <div class="class-card">
-                    <span>EC</span> <span class="tatkal">TATKAL</span>
-                    <p>₹ 2080</p>
-                    <small>Available 5</small>
-                </div>
-                <div class="class-card">
-                    <span>EC</span>
-                    <p>Available 19</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- Train Card 2 -->
-        <div class="train-card">
-            <div class="train-header">
-                <h2>Purushottam Exp</h2>
-                <span>#12802 | Depart on: <strong>SMTWTFS</strong></span>
-            </div>
-            <div class="train-details">
-                <div class="time">
-                    <p>10:40 PM, 11 DEC</p>
-                    <small>New Delhi</small>
-                </div>
-                <div class="duration">5h 20m</div>
-                <div class="time">
-                    <p>4:00 AM, 12 DEC</p>
-                    <small>Kanpur Central</small>
-                </div>
-            </div>
-            <div class="classes">
-                <div class="class-card">
-                    <span>3A</span> <span class="tatkal">TATKAL</span>
-                    <p>₹ 1150</p>
-                    <small>Available 110</small>
-                </div>
-                <div class="class-card">
-                    <span>2A</span> <span class="tatkal">TATKAL</span>
-                    <p>₹ 1590</p>
-                    <small>Available 32</small>
-                </div>
-                <div class="class-card">
-                    <span>SL</span> <span class="tatkal">TATKAL</span>
-                    <p>₹ 425</p>
-                    <small>TQWL 54</small>
-                </div>
-            </div>
+        <div class="train-list">
+            @for(train of trainSchedules; track train.trainId) {
+                <div class="train-card">
+                    <div class="train-header">
+                        <h2>{{train.trainName}}</h2>
+                        <span>#{{train.trainId}} | Depart on: <strong>SMTWTFS</strong></span>
+                    </div>
+                    <div class="train-details">
+                        <div class="time">
+                            <p>{{train.departureTime}}</p>
+                            <small>{{train.fromStation}}</small>
+                        </div>
+                        <div class="duration">{{train.duration}}</div>
+                        <div class="time">
+                            <p>{{train.arrivalTime}}</p>
+                            <small>{{train.toStation}}</small>
+                        </div>
+                    </div>
+                    <div class="classes">
+                        @for(class of train.classes; track class.classType) {
+                            <div class="class-card">
+                                <span>{{class.classType}}</span> 
+                                @if(class.isTatkal) {
+                                    <span class="tatkal">TATKAL</span>
+                                }
+                                <p>₹ {{class.price}}</p>
+                                <small>Available {{class.availability}}</small>
+                            </div>    
+                        }
+                    </div>
+                </div>    
+            }    
         </div>
     </main>
 </div>

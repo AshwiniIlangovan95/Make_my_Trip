@@ -1,0 +1,130 @@
+[
+    {
+      "trainId": "12034",
+      "trainName": "Ndls Cnb Sht",
+      "fromStation": "NDLS",
+      "toStation": "CNB",
+      "departureTime": "3:50 PM",
+      "arrivalTime": "8:50 PM",
+      "duration": "5h 0m",
+      "availableDates": ["2024-06-12", "2024-06-13", "2024-06-14"],
+      "classes": [
+        { "classType": "CC", "price": 1115, "availability": 58 },
+        { "classType": "CC", "price": 2115, "availability": 20, "isTatkal": true },
+        { "classType": "EC", "price": 2080, "availability": 5 }
+      ]
+    },
+    {
+      "trainId": "12802",
+      "trainName": "Purushottam Exp",
+      "fromStation": "NDLS",
+      "toStation": "CNB",
+      "departureTime": "10:40 PM",
+      "arrivalTime": "4:00 AM",
+      "duration": "5h 20m",
+      "availableDates": ["2024-06-12", "2024-06-13"],
+      "classes": [
+        { "classType": "3A", "price": 1150, "availability": 110 },
+        { "classType": "2A", "price": 1590, "availability": 32 },
+        { "classType": "CC", "price": 2115, "availability": 20, "isTatkal": true }
+      ]
+    },
+    {
+      "trainId": "12951",
+      "trainName": "Mumbai Rajdhani",
+      "fromStation": "BCT",
+      "toStation": "NDLS",
+      "departureTime": "5:00 PM",
+      "arrivalTime": "8:30 AM",
+      "duration": "15h 30m",
+      "availableDates": ["2024-06-12", "2024-06-14"],
+      "classes": [
+        { "classType": "1A", "price": 4500, "availability": 15 },
+        { "classType": "2A", "price": 3250, "availability": 42 }
+      ]
+    },
+    {
+        "trainId": "12052",
+        "trainName": "Goa Express",
+        "fromStation": "NDLS",
+        "toStation": "SBC",
+        "departureTime": "7:15 AM",
+        "arrivalTime": "2:00 PM",
+        "duration": "8h 45m",
+        "availableDates": ["2024-06-11", "2024-06-13"],
+        "classes": [
+          { "classType": "SL", "price": 400, "availability": 150 },
+          { "classType": "2S", "price": 800, "availability": 65 }
+        ]
+      },
+      {
+        "trainId": "18006",
+        "trainName": "Kolkata Mail",
+        "fromStation": "HWH",
+        "toStation": "BCT",
+        "departureTime": "6:30 PM",
+        "arrivalTime": "9:00 AM",
+        "duration": "14h 30m",
+        "availableDates": ["2024-06-12", "2024-06-14"],
+        "classes": [
+          { "classType": "AC 3 Tier", "price": 1250, "availability": 40 },
+          { "classType": "Sleeper", "price": 500, "availability": 120 }
+        ]
+      },
+      {
+        "trainId": "15640",
+        "trainName": "Hyderabad Express",
+        "fromStation": "HYB",
+        "toStation": "PUNE",
+        "departureTime": "9:00 AM",
+        "arrivalTime": "5:30 PM",
+        "duration": "8h 30m",
+        "availableDates": ["2024-06-11", "2024-06-12"],
+        "classes": [
+          { "classType": "2S", "price": 650, "availability": 80 },
+          { "classType": "CC", "price": 1200, "availability": 30 }
+        ]
+      },
+      {
+        "trainId": "13452",
+        "trainName": "Jaipur Fast",
+        "fromStation": "JP",
+        "toStation": "MAS",
+        "departureTime": "11:00 AM",
+        "arrivalTime": "10:00 PM",
+        "duration": "11h 0m",
+        "availableDates": ["2024-06-11", "2024-06-14"],
+        "classes": [
+          { "classType": "1A", "price": 3800, "availability": 20 },
+          { "classType": "2A", "price": 2500, "availability": 50 }
+        ]
+      },
+      {
+        "trainId": "15020",
+        "trainName": "Chennai Rajdhani",
+        "fromStation": "MAS",
+        "toStation": "NDLS",
+        "departureTime": "8:00 AM",
+        "arrivalTime": "7:30 PM",
+        "duration": "12h 30m",
+        "availableDates": ["2024-06-12", "2024-06-14"],
+        "classes": [
+          { "classType": "1A", "price": 4200, "availability": 12 },
+          { "classType": "3A", "price": 1600, "availability": 35 }
+        ]
+      },
+      {
+        "trainId": "11033",
+        "trainName": "Surat Express",
+        "fromStation": "ADI",
+        "toStation": "PUNE",
+        "departureTime": "4:00 PM",
+        "arrivalTime": "11:45 PM",
+        "duration": "7h 45m",
+        "availableDates": ["2024-06-12", "2024-06-13"],
+        "classes": [
+          { "classType": "CC", "price": 1050, "availability": 70 },
+          { "classType": "SL", "price": 400, "availability": 90 }
+        ]
+    }
+]

@@ -10,6 +10,7 @@ export class LocationService {
   private locationUrl = 'assets/locations.json';
   private classesUrl = 'assets/classes.json';
   private resultUrl = "assets/result.json";
+  private trainSchedulesUrl = "assets/trainschedules.json";
 
   constructor(private http: HttpClient) { }
 
@@ -23,6 +24,10 @@ export class LocationService {
 
   getResults():Observable<any>{
     return this.http.get<any>(this.resultUrl)
+  }
+
+  getTrainSchedules():Observable<any>{
+    return this.http.get<any>(this.trainSchedulesUrl)
   }
 
 

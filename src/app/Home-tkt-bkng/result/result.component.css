@@ -87,23 +87,29 @@ body {
 .grid-item {
     padding: 8px;
     font-size: 14px;
-    text-align: center;
+    text-align: center;
 }
-.check-form{
-    display: flex; 
-    justify-content: space-between; 
-    font-size: 14px;
-    padding: 10px;
+
+.grid-item:hover {
+    background-color: #bde0fe;
+    cursor: pointer;
 }
-:host ::ng-deep .p-card{
-    margin-bottom: 20px;
-}
-.card-header{
+.card-header {
     font-size: 16px;
-    color: #000;
-    font-weight: 900;
+    font-weight: bold;
+    color: black;
+    margin-bottom: 16px;
 }
-input[type="checkbox"]{
-    width: 17px; /*Desired width*/
-    height: 17px; /*Desired height*/
-  }
+.check-form {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 16px;
+    font-size: 14px;
+}
+::ng-deep.p-card{
+    margin-bottom: 16px;
+}
+.train-list {
+    height: 80vh;
+    overflow: auto;
+}

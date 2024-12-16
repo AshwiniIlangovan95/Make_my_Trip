@@ -8,6 +8,12 @@ import { HttpClientModule } from '@angular/common/http';
 import { LocationService } from '../../../services/location.service';
 import { CommonModule } from '@angular/common';
 import { map, Observable, startWith } from 'rxjs';
+import { AutoComplete } from 'primeng/autocomplete';
+
+interface AutoCompleteCompleteEvent {
+  originalEvent: Event;
+  query: string;
+}
 
 @Component({
   selector: 'app-home-tkt-bkng',
@@ -20,7 +26,8 @@ import { map, Observable, startWith } from 'rxjs';
             MatAutocompleteModule,
             ReactiveFormsModule,
             HttpClientModule,
-            CommonModule
+            CommonModule,
+            AutoComplete
           ],
   templateUrl: './home-tkt-bkng.component.html',
   styleUrl: './home-tkt-bkng.component.css'
@@ -45,6 +52,9 @@ export class HomeTktBkngComponent implements OnInit {
   filteredFromCities!: any;
   filteredToCities!: Observable<any[]>;
   fromControl = new FormControl('');
+  countries:any;
+  selectedCountry: any;
+  filteredCountries: any;
 
   constructor(private locationService: LocationService,  private fb: FormBuilder) {
     this.travelForm = this.fb.group({
@@ -56,10 +66,14 @@ export class HomeTktBkngComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.getCountries();
     this.locationService.getLocation().subscribe((data)=> {
       this.locations = data.locations;
+      console.log("OnInit", this.locations)
       this.fromControl.valueChanges.subscribe(newValue=>{
+        console.log("from control", newValue)
         this.filteredFromCities = this._filterCities(newValue);
+        console.log("from control filtered",this.filteredFromCities )
       })
 
       this.filteredToCities = this.fromControl!.valueChanges.pipe(
@@ -77,6 +91,27 @@ export class HomeTktBkngComponent implements OnInit {
       console.error("Error on loading classes", err)
     })
   }
+
+  getCountries(){
+    this.locationService.getLocation().subscribe((data)=>{
+      this.countries = data.locations
+      console.log("getCountries", this.countries)
+    })
+  }
+
+  filterCountry(event: AutoCompleteCompleteEvent) {
+    let filtered: any[] = [];
+    let query = event.query;
+
+    for (let i = 0; i < (this.countries as any[]).length; i++) {
+        let country = (this.countries as any[])[i];
+        if (country.name.toLowerCase().indexOf(query.toLowerCase()) == 0) {
+            filtered.push(country);
+        }
+    }
+
+    this.filteredCountries = filtered;
+}
 
   private _filterCities(value: any): any[] {
     const filterValue = value.toLowerCase();
